@@ -1,0 +1,21 @@
+{
+  "name": "public",
+  "authors": [],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.4.2",
+    "angular": "^1.6.4",
+    "angular-socket-io": "^0.7.0",
+    "material-design-lite": "^1.3.0"
+  }
+}
