@@ -1,6 +1,7 @@
 'use strict';
 
-const sharedsession  = require('express-socket.io-session');
+const shared = require('express-socket.io-session');
+const redis  = require('socket.io-redis');
 
 atlom
 	.module('socketIo', ['express'])
@@ -11,7 +12,11 @@ SocketIo.$inject = ['$provide', 'server', 'session'];
 function SocketIo($provide, server, session){
 	let io = require('socket.io')(server);
 
-	io.use(sharedsession(session, {
+	// share pub/sub redis
+	io.adapter(redis(config.redis));
+
+	// share session express
+	io.use(shared(session, {
 		autoSave:true
 	})); 
 	
