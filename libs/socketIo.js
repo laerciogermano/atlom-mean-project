@@ -1,5 +1,6 @@
 'use strict';
 
+const config = atlom.config;
 const shared = require('express-socket.io-session');
 const redis  = require('socket.io-redis');
 
