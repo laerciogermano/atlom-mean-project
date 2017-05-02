@@ -4,7 +4,8 @@ atlom.config.set({
    assets: {
         css: [
             //bowser components
-            'public/bower_components/material-design-lite/material.min.css',
+            'public/libs/uikit/css/uikit.min.css',
+            
             //application
             'application/*/client/**/*.css',
             'public/pages/**/*.css'
@@ -14,10 +15,12 @@ atlom.config.set({
             'public/bower_components/angular/angular.min.js',
             'public/bower_components/angular-ui-router/release/angular-ui-router.min.js',
             'public/bower_components/angular-socket-io/socket.min.js',
-            'public/bower_components/material-design-lite/material.min.js',
+            'public/bower_components/jquery/dist/jquery.min.js',
+            'public/libs/uikit/js/uikit.min.js',
+
             //application
-            'application/*/client/**/module.js',
-            'public/pages/**/module.js',
+            'application/*/client/**/module.js', // modules first
+            'public/pages/**/module.js', // modules first
             'application/*/client/**/*.js',
             'public/pages/**/*.js',
         ]
