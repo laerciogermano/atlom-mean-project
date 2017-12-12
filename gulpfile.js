@@ -1,11 +1,10 @@
 'use strict';
 
+// Inicializa o ambiente como task
 process.env.NODE_ENV = 'task';
 
-// start app tasks
-require('./app.js');
+// Capura instância global atlom
+const atlom = require('atlom');
 
-// start files tasks
-require('globby').sync('./tasks/*').forEach(file => require(file));
-
-
+// Inicializa arquivos das tasks
+atlom.require('**/*.task.js');

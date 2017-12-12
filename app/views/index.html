@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+	<title>Atlom-Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+	{% for file in assets.css %}
+		<link rel="stylesheet" href="/{{file}}">
+	{% endfor %}
+ 
+	{% if process.env.NODE_ENV == "production" %}
+		<link rel="stylesheet" type="text/css" href="/assets/build/aggregated.min.css" />
+	{% endif %}
+
+</head>
+<body>
+
+	<app-root></app-root>
+
+	{% if process.env.NODE_ENV == "production" %}
+		<script src="/assets/build/aggregated.min.js"></script>	
+	{% endif %}
+
+	{% for file in assets.js %}
+		<script src="/{{file}}"></script>
+	{% endfor %}
+
+</body>
+</html>

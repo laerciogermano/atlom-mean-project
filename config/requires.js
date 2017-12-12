@@ -2,9 +2,9 @@
 
 atlom.config.set({
     requires: [
-        'libs/*',
-        'application/**/module.js',
-        'application/**/*.js',
-        '!application/**/client/**/module.js'
+        'modules/*',
+        'app/**/*.js',
+        '!**/*.spec.js',
+        '!**/*.task.js'
     ]
 });
